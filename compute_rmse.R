@@ -15,7 +15,7 @@ alpha <- c(0.5, 1, 1.5, 1.75)
 # sample sizes
 n <- c(32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536#, 131072
 			) # using all values will take long time to run
-#n<-c(32, 64, 128) # for testing
+#n<-c(32, 64, 128, 256) # for testing
 
 # number of replicates
 repl<-1000

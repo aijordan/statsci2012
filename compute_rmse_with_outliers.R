@@ -13,11 +13,10 @@ alpha <- c(seq(0.25,1.75,by=0.25), 1.85, 1.9)
 
 # sample size
 n <- 1024
-#n <- 10
 
 # number of replicates
 repl<-1000
-#repl<-3
+repl<-50
 
 # vector of outliers
 noutls <- c(0, 5)
@@ -71,7 +70,7 @@ for(noutl in noutls) { # iterate over outliers
                 break
          	}
 		    # add outliers
-    		ts[z[iter,]] <- ts[z[iter,]] + omega[z[iter,]]
+    		ts[z[iter,]] <- ts[z[iter,]] + omega[iter,]
     		
     		# estimate FD
     		fd <- fd.estimate(ts, methods=methods)

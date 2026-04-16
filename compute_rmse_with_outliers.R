@@ -27,12 +27,27 @@ methods <- list(list(name="variation", p.index=0.5),
                 list(name="variation", p.index=2),
                 "periodogram", "hallwood", "dctII",
                 "boxcount")
+fd.CP <- function(data, ...) {
+  n <- length(data)
+  diff_lag1 <- diff(data)
+  CPvector <- as.numeric(diff_lag1[-1L] * diff_lag1[-(n-1L)] < 0)
+  CP <- 1 / (n - 2) * sum(CPvector)
+  H <- 1 + log2(sin(pi * (1 - CP) / 2))
+  DCP <- 2 - H
+  return(DCP)
+}
+estimate_fd <- function(series) {
+  c(
+    fractaldim::fd.estimate(series, methods=methods)$fd,
+    fd.CP(series)
+  )
+}
+lmethods <- length(methods) + 1
 # corresponding names
 method.names <- c("hybrid.0.5", "hybrid.1", "hybrid.2", 
                   "periodogram", "hallwood", "dctII",
                   "boxcount")
 
-lmethods <- length(methods)
 
 # On Unix-like system the RandomFieldsUtils package by default re-installs various packages.
 # This is to avoid it.
@@ -73,8 +88,8 @@ for(noutl in noutls) { # iterate over outliers
     		ts[z[iter,]] <- ts[z[iter,]] + omega[iter,]
     		
     		# estimate FD
-    		fd <- fd.estimate(ts, methods=methods)
-    		fdarray[,iter] <- fd$fd
+    		fd <- estimate_fd(ts)
+    		fdarray[,iter] <- fd
   		}
   		if(!error) {
   		    # compute RMSE

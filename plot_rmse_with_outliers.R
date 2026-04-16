@@ -4,13 +4,13 @@
 
 # methods in the input files
 method.header <- c("hybrid.0.5", "hybrid.1", "hybrid.2",
-             "periodogram", "hallwood", "dctII", "boxcount")
+             "periodogram", "hallwood", "dctII", "boxcount", "CP")
 # corresponding names
 methods <- c("Rodogram", "Madogram", "Variogram", 
-             "Periodogram", "Hall-Wood", "DCT-II", "Box-Count")
+             "Periodogram", "Hall-Wood", "DCT-II", "Box-Count", "CP")
 
 # order of the methods shown in the plot
-method.order <- c(7,4,6,5,1,2,3)
+method.order <- c(7,4,6,5,1,2,3, 8)
 
 lmethods <- length(method.order)
 
@@ -19,7 +19,7 @@ noutls <- c(0, 5)
 loutl <- length(noutls)
 
 # colors
-col <- c("black", rainbow(20)[c(1, 3, 7, 12, 14, 18)])
+col <- c("black", rainbow(20)[c(1, 3, 7, 12, 14, 18, 20)])
 
 # point symbols
 pch <- 1:lmethods

@@ -46,7 +46,7 @@ lmethods <- length(methods) + 1
 # corresponding names
 method.names <- c("hybrid.0.5", "hybrid.1", "hybrid.2", 
                   "periodogram", "hallwood", "dctII",
-                  "boxcount")
+                  "boxcount", "CP")
 
 
 # On Unix-like system the RandomFieldsUtils package by default re-installs various packages.

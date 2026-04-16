@@ -6,12 +6,12 @@ alpha <- c(0.5, 1, 1.5, 1.75)
 
 # all methods (must be the same as the column names in the RMSE files)
 methods <- c("hybrid.0.5", "hybrid.1", "hybrid.2",
-            "boxcount", "periodogram", "hallwood","dctII")
+            "boxcount", "periodogram", "hallwood","dctII", "CP")
 # corresponding names used in the legend of the plot
 methods.legend <- c("Rodogram", "Madogram", "Variogram",
-                    "Box-Count", "Periodogram", "Hall-Wood", "DCT-II")
+                    "Box-Count", "Periodogram", "Hall-Wood", "DCT-II", "CP")
 # order of the methods in the plot
-plot.methods <- c(4,5,7,6,1,2,3)
+plot.methods <- c(4,5,7,6,1,2,3, 8)
 
 methods <- methods[plot.methods]
 methods.legend <- methods.legend[plot.methods]
@@ -19,7 +19,7 @@ methods.legend <- methods.legend[plot.methods]
 lmethods <- length(methods)
 
 # colors
-col <- c("black", rainbow(20)[c(1, 3, 7, 12, 14, 18)])
+col <- c("black", rainbow(20)[c(1, 3, 7, 12, 14, 18, 20)])
 
 # point symbols
 pch <- 1:lmethods

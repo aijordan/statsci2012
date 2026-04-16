@@ -14,8 +14,10 @@ method.labels <- list(hybrid.2 = "Variogram",
                       hallwood = "Hall-Wood", 
                       periodogram = "Periodogram",
                       dctII = "DCT-II", 
-                      boxcount = "Box-Count")
-method.order <- 1:7
+                      boxcount = "Box-Count",
+                      CP = "CP"
+                     )
+method.order <- 1:8
 my.mar <- c(2.7,2.7,2,1)
 my.mgp <- c(1.6,0.5,0)
 par(mfrow=c(3,1), mar=my.mar, mgp=my.mgp)
